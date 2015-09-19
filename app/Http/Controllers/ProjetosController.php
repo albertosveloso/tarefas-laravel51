@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Http\Requests\ProjetoRequest;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Projeto;
-use App\Http\Controllers\Controller;
+
 
 class ProjetosController extends Controller
 {
@@ -23,5 +21,23 @@ class ProjetosController extends Controller
     {
         $projetos = $this->projeto->paginate(7); //o paginate faz a paginacao!!!!
         return view('projetos.index', compact('projetos')); //Enviando projetos para view
+    }
+
+    public function create()
+    {
+        return view('projetos.create');
+    }
+
+    //Grava os dados no banco
+    public function store(ProjetoRequest $request)
+    {
+        //A request ProjetoRequest tem as validacoes que criamos., pasta http / requests /
+        //Recebe request e intercepta os dados enviados via formulario
+        //dd($request->all()); //o dd mata a aplicacao e mostra resultado
+
+        $this->projeto->create($request->all());
+
+        return redirect()->route('projetos.index');
+
     }
 }

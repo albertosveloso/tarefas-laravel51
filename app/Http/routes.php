@@ -12,4 +12,7 @@
 */
 
 Route::get('/','TarefasController@index');
-Route::get('/projetos','ProjetosController@index');
+
+Route::get('/projetos', ['as' => 'projetos.index', 'uses' => 'ProjetosController@index']);
+Route::get('/projetos/create', ['as' => 'projetos.create', 'uses' => 'ProjetosController@create']);
+Route::post('/projetos/store', ['as' => 'projetos.store', 'uses' => 'ProjetosController@store']);
