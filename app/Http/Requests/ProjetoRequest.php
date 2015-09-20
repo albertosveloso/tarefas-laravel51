@@ -28,4 +28,11 @@ class ProjetoRequest extends Request
             'descricao' => 'required|min:8'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'descricao.required' => 'Informe a descrição do projeto.',
+        ];
+    }
 }

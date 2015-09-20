@@ -13,19 +13,19 @@
 
 Route::get('/','TarefasController@index');
 
-//Teste autenticação:
-Route::get('/auth', function(){
-    $user = \App\User::find(11);
-    Auth::login($user);
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
 
-    if(Auth::check()){
-        return "Oi";
-    }
+//Autenticação login laravel um a um ou podemos usar de maneira simplificada conforme acima:
+//Route::get('auth/login', 'Auth\AuthController@getLogin');
+//Route::post('auth/login', 'Auth\AuthController@postLogin');
+//Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
-});
 
-//usando agrupamento de rotas para não ficar repetindo o prefixo projeto
-Route::group(['prefix'=>'projetos'], function(){
+//usando agrupamento de rotas para não ficar repetindo o prefixo projeto, e já adicionando o middleware
+Route::group(['prefix'=>'projetos', 'middleware'=>'auth'], function(){
     Route::get('', ['as' => 'projetos.index', 'uses' => 'ProjetosController@index']);
     Route::get('create', ['as' => 'projetos.create', 'uses' => 'ProjetosController@create']);
     Route::post('store', ['as' => 'projetos.store', 'uses' => 'ProjetosController@store']);

@@ -158,15 +158,15 @@ label[for=tempogasto]{
 
 .dataalteracao { float:right;}
 
-ul {
-  list-style-type: none;
-}
-
 .panel {
   box-shadow: none !important;
 }
 
 .panel-primary {
   border: none !important;
+}
+
+.alert {
+  color: #C40D0D;
 }
 
