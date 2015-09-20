@@ -19,7 +19,7 @@ class ProjetosController extends Controller
 
     public function index()
     {
-        $projetos = $this->projeto->paginate(7); //o paginate faz a paginacao!!!!
+        $projetos = $this->projeto->orderby('id','desc')->paginate(7); //o paginate faz a paginacao!!!!
         return view('projetos.index', compact('projetos')); //Enviando projetos para view
     }
 
@@ -38,6 +38,26 @@ class ProjetosController extends Controller
         $this->projeto->create($request->all());
 
         return redirect()->route('projetos.index');
+    }
 
+    //Editar projeto
+    public function edit($id)
+    {
+        $projeto = $this->projeto->find($id);
+
+        return view('projetos.edit', compact('projeto'));
+    }
+
+    public function update($id, ProjetoRequest $request)
+    {
+        $this->projeto->find($id)->update($request->all());
+        return redirect()->route('projetos.index');
+    }
+
+    //Excluir projeto
+    public function destroy($id)
+    {
+        $this->projeto->find($id)->delete();
+        return redirect()->route('projetos.index');
     }
 }

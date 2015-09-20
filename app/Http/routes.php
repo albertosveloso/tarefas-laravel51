@@ -13,6 +13,24 @@
 
 Route::get('/','TarefasController@index');
 
-Route::get('/projetos', ['as' => 'projetos.index', 'uses' => 'ProjetosController@index']);
-Route::get('/projetos/create', ['as' => 'projetos.create', 'uses' => 'ProjetosController@create']);
-Route::post('/projetos/store', ['as' => 'projetos.store', 'uses' => 'ProjetosController@store']);
+//Teste autenticação:
+Route::get('/auth', function(){
+    $user = \App\User::find(11);
+    Auth::login($user);
+
+    if(Auth::check()){
+        return "Oi";
+    }
+
+});
+
+//usando agrupamento de rotas para não ficar repetindo o prefixo projeto
+Route::group(['prefix'=>'projetos'], function(){
+    Route::get('', ['as' => 'projetos.index', 'uses' => 'ProjetosController@index']);
+    Route::get('create', ['as' => 'projetos.create', 'uses' => 'ProjetosController@create']);
+    Route::post('store', ['as' => 'projetos.store', 'uses' => 'ProjetosController@store']);
+    Route::get('edit/{id}', ['as' => 'projetos.edit', 'uses' => 'ProjetosController@edit']);
+    Route::put('update/{id}', ['as' => 'projetos.update', 'uses' => 'ProjetosController@update']);
+    Route::get('destroy/{id}', ['as' => 'projetos.destroy', 'uses' => 'ProjetosController@destroy']);
+});
+
