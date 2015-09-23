@@ -10,7 +10,7 @@
         @foreach($projetos as $projeto)
             @if(!$projeto->apagado)
                 <div class="panel-heading">
-                <span class="descricao">{{$projeto->descricao}} - ID: {{ $projeto->id }}</span>
+                <span class="descricao" title="Criado em: {{$projeto->created_at->format('d/m/Y h:i')}}">{{$projeto->descricao}} - ID: {{ $projeto->id }}</span>
                     <span class="status">Status:
                     @if($projeto->cancelado)
                         <b>Cancelado</b>
@@ -20,10 +20,6 @@
                     </span>
             </div>
                 <div class="panel-body">
-
-                <p class="datas">Criado em: {{$projeto->created_at->format('d/m/Y h:i')}} |
-                Última alteração: {{$projeto->updated_at->format('d/m/Y h:i')}}</p>
-
                 @unless($projeto->users->isEmpty())
                 Responsáveis:
                 <ul>

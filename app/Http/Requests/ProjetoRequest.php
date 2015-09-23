@@ -32,8 +32,7 @@ class ProjetoRequest extends Request
     public function messages()
     {
         return [
-            'descricao.required' => 'Informe a descrição do projeto.',
-            'user_list' => 'O projeto deve ter no mínimo um responsável, selecione.'
+            'descricao.required' => 'Informe a descrição do projeto.'
         ];
     }
 }

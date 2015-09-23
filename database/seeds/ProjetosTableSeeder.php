@@ -12,6 +12,7 @@ class ProjetosTableSeeder extends Seeder
      */
     public function run()
     {
+
         Projeto::truncate(); //Apaga os dados da tabela do banco de dados
 
         //Chamando factory
