@@ -37,7 +37,7 @@
                 <p>
                 <a href="{{route('projetos.edit', ['id'=>$projeto->id])}}"
                    class="btn btn-primary">Editar</a>
-                <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover o projeto: {{$projeto->descricao}}} ?')" href="{{route('projetos.destroy', ['id'=>$projeto->id])}}">Excluir</a>
+                <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover o projeto: {{$projeto->descricao}} ?')" href="{{route('projetos.destroy', ['id'=>$projeto->id])}}">Excluir</a>
                 </p>
 
             </div>

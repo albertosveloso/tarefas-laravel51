@@ -10,9 +10,10 @@
 </div>
 
 <div class="form-group">
-    {!! Form::checkbox('cancelado', 1, null) !!}
+    {{--{!! Form::checkbox('cancelado', 1, null) !!}--}}
+    {!! Form::checkbox('cancelado',null,null, array('id'=>'cancelado')) !!}
 
-    <span>Cancelado</span>
+<span>Cancelado</span>
 </div>
 
 

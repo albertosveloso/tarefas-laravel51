@@ -14,10 +14,11 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
         DB::statement('SET foreign_key_checks = 0;'); //desativando para acertando problemas de verificação chave estrangeira no mysql
-
         $this->call('ProjetosTableSeeder'); //Chamando TableSedder que criamos para o cad. projeto
+        $this->call('UserTableSeeder'); //Chamando TableSedder para criar usuário aleatorios
 
         //Criando apenas um usuário
+        /*
         factory('App\User')->create(
             [
                 'name' => 'Beto',
@@ -26,13 +27,9 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => str_random(10),
             ]
         );
-
-
-        //$this->call('UserTableSeeder'); //Chamando TableSedder para criar usuário aleatorios
-
+        */
 
         DB::statement('SET foreign_key_checks = 1;'); //ativando verificação chave estrangeira no mysql
-
         Model::reguard();
     }
 }
