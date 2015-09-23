@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProjetoRequest;
 use Illuminate\Http\Request;
 use App\Projeto;
+use App\User;
 
 
 class ProjetosController extends Controller
@@ -19,13 +20,16 @@ class ProjetosController extends Controller
 
     public function index()
     {
-        $projetos = $this->projeto->orderby('id','desc')->paginate(7); //o paginate faz a paginacao!!!!
+        $projetos = $this->projeto->orderby('id','desc')->paginate(4); //o paginate faz a paginacao!!!!
         return view('projetos.index', compact('projetos')); //Enviando projetos para view
     }
 
     public function create()
     {
-        return view('projetos.create');
+
+        $userIds = User::lists('name', 'id');
+
+        return view('projetos.create', compact('userIds'));
     }
 
     //Grava os dados no banco
@@ -35,7 +39,9 @@ class ProjetosController extends Controller
         //Recebe request e intercepta os dados enviados via formulario
         //dd($request->all()); //o dd mata a aplicacao e mostra resultado
 
-        $this->projeto->create($request->all());
+        $projetoNovo =  $this->projeto->create($request->all());
+
+        $projetoNovo->users()->attach($request->input('user_list'));
 
         return redirect()->route('projetos.index');
     }
@@ -43,14 +49,21 @@ class ProjetosController extends Controller
     //Editar projeto
     public function edit($id)
     {
+        $userIds = User::lists('name', 'id');
+
         $projeto = $this->projeto->find($id);
 
-        return view('projetos.edit', compact('projeto'));
+        return view('projetos.edit', compact('projeto', 'userIds'));
     }
 
     public function update($id, ProjetoRequest $request)
     {
         $this->projeto->find($id)->update($request->all());
+
+        $projetoAtualizado = $this->projeto->find($id);
+
+        $projetoAtualizado->users()->sync($request->input('user_list'));
+
         return redirect()->route('projetos.index');
     }
 

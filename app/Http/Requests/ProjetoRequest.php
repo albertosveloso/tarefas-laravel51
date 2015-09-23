@@ -33,6 +33,7 @@ class ProjetoRequest extends Request
     {
         return [
             'descricao.required' => 'Informe a descrição do projeto.',
+            'user_list' => 'O projeto deve ter no mínimo um responsável, selecione.'
         ];
     }
 }

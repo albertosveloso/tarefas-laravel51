@@ -1,61 +1,62 @@
-@extends('tpllogin')
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#">
+    <title>RT - Rascunho de tarefas </title>
+    <link href="{{ asset('img/terminal.png') }}" rel="shortcut icon">
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/login.css')}}"  rel="stylesheet">
+    <script src="{{ asset('js/ie-emulation-modes-warning.js')}}"></script>
+</head>
+<body>
 
-@section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="account-wall">
+                <p id="logo-login">Rascunho de Tarefas</p>
+                <form class="form-signin" method="post" action="/auth/login">
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    {!! csrf_field() !!} <!--Segurança com token-->
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
+                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
+                    <input type="password" name="password" id="password" class="form-control">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
+                    <label class="checkbox pull-left">
+                        <input type="checkbox" name="remember">Continuar conectado
+                    </label>
+                    <!--<a href="#" class="pull-right need-help">Não consegue entrar? </a><span class="clearfix"></span>-->
+                </form>
+            </div>
+            @if($errors->any())
+                <ul class="alert">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+            @endif
+            <!--<a href="#" class="text-center new-account">Criar conta </a>-->
+        </div>
+    </div>
 </div>
-@endsection
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ asset('js/jquery1.11.2.min.js')}}"></script>
+<script src="{{ asset('js/bootstrap.min.js')}}"></script>
+<!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+<script src="{{ asset('js/holder.js')}}"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="{{ asset('js/ie10-viewport-bug-workaround.js')}}"></script>
+
+</body>
+</html>
