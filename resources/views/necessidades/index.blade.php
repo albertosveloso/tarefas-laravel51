@@ -23,11 +23,11 @@
                     <p><b>Prioridade:</b> {{$necessidade->prioridade}}</p>
                     <p><b>Projeto</b>: {{$necessidade->projeto->descricao}} - Código: {{$necessidade->projeto->id}} </p>
 
-                    {{--   <p>
-                     <a href="{{route('necessidade.edit', ['id'=>$necessidade->id])}}"
+                    <p>
+                     <a href="{{route('necessidades.edit', ['id'=>$necessidade->id])}}"
                          class="btn btn-primary">Editar</a>
-                      <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover a necessidade: {{$necessidade->descricao}} ?')" href="{{route('necessidade.destroy', ['id'=>$necessidade->id])}}">Excluir</a>
-                      </p>--}}
+                      <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover a necessidade: {{$necessidade->descricao}} ?')" href="{{route('necessidades.destroy', ['id'=>$necessidade->id])}}">Excluir</a>
+                      </p>
 
             </div>
             @endif

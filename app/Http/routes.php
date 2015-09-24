@@ -11,6 +11,9 @@
 |
 */
 
+//Verificar sql que esta sendo enviado para o banco
+//Event::listen('illuminate.query', function($sql) { echo '<p style="position: relative">' . $sql . '<p/>' ;});
+
 Route::get('/','TarefasController@index');
 
 //Autenticação login laravel um a um ou podemos usar de maneira simplificada conforme acima:

@@ -2,7 +2,8 @@
 
 @section('content')
 
-    <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Editar projeto:</h3>
+    <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Editar necessidade<small> - (*) Indica um campo obrigatório</small>
+    </h3>
 
     @if($errors->any())
         <ul class="alert">
@@ -15,15 +16,13 @@
 
     <div class="panel panel panel-primary">
         <!--Usando illuminate, com rotas nomeadas podemos usar o route apontando para a acao que vai salvar/criar-->
-        <!-- o Form:model faz o bind ele já popula o form conforme o que temos no model-->
-        {!! Form::model($projeto, ['route'=>['projetos.update', $projeto->id],'method' => 'put']) !!}
+        {!! Form::model($necessidade,['route' =>['necessidades.update', $necessidade->id],'method' => 'put']) !!}
 
-        <!-- Formulario fica em um arquivo separado para ser reaproveitado-->
-        @include('projetos/_form')
+        @include('necessidades/_form')
 
         <div class="form-group">
             {!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
-            <a href="{{route('projetos.index')}}" class="btn btn-default">Voltar</a>
+            <a href="{{route('necessidades.index')}}" class="btn btn-default">Voltar</a>
         </div>
 
         {!! Form::close() !!}

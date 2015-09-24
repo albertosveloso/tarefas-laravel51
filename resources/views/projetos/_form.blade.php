@@ -7,6 +7,7 @@
 <div class="form-group">
     {!! Form::label('user_list', '(*)Usuário(s):') !!}
     {!! Form::select('user_list[]', $userIds, null, ['class'=>'form-control usuarios', 'multiple']) !!}
+
 </div>
 
 <div class="form-group">

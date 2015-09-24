@@ -11,7 +11,8 @@
 
 <div class="form-group">
     {!! Form::label('projeto_list', '(*)Projeto:') !!}
-    {!! Form::select('projeto_list[]', $projetoIds) !!}
+    {!! Form::select('projeto_list[]', $projetoId, null, ['class'=>'form-control']) !!}
+
 </div>
 
 <div class="form-group">

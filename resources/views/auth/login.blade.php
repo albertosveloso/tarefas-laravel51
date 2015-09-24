@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">
+    {{--<link href="http://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/css">--}}
     <link href="{{ asset('css/login.css')}}"  rel="stylesheet">
     <script src="{{ asset('js/ie-emulation-modes-warning.js')}}"></script>
 </head>

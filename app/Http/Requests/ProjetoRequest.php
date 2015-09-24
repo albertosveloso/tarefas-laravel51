@@ -25,14 +25,18 @@ class ProjetoRequest extends Request
     {
         //Criando as validações personalizadas
         return [
-            'descricao' => 'required|min:8'
+            'descricao' => 'required|min:8',
+            'user_list' => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'descricao.required' => 'Informe a descrição do projeto.'
+            'descricao.required' => 'Informe a descrição do projeto.',
+            'descricao.min' => 'A descrição deve ter no mínimo 8 caracteres',
+            'user_list.required' => 'Selecione no mínimo um usuário.',
+
         ];
     }
 }

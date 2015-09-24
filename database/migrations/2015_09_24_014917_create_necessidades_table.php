@@ -13,11 +13,10 @@ class CreateNecessidadesTable extends Migration
     public function up()
     {
         Schema::create('necessidades', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
 
-            //Chave estrangeira 1-N
             $table->unsignedInteger('projeto_id');
-            $table->foreign('projeto_id')->references('id')->on('projetos')->onDelete('cascade');
+            $table->foreign('projeto_id')->references('id')->on('projetos')->onUpdate('cascade')->onDelete('cascade');
 
             $table->string('descricao', 100);
             $table->unsignedInteger('prioridade');
