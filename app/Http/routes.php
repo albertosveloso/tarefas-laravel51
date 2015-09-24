@@ -24,7 +24,7 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', ['as' => 'auth.logout', 'uses' => 'Auth\AuthController@getLogout']);
 
 
-//usando agrupamento de rotas para não ficar repetindo o prefixo projeto, e já adicionando o middleware
+//Projetos: usando agrupamento de rotas para não ficar repetindo o prefixo projeto, e já adicionando o middleware
 Route::group(['prefix'=>'projetos', 'middleware'=>'auth'], function(){
     Route::get('', ['as' => 'projetos.index', 'uses' => 'ProjetosController@index']);
     Route::get('create', ['as' => 'projetos.create', 'uses' => 'ProjetosController@create']);
@@ -34,3 +34,12 @@ Route::group(['prefix'=>'projetos', 'middleware'=>'auth'], function(){
     Route::get('destroy/{id}', ['as' => 'projetos.destroy', 'uses' => 'ProjetosController@destroy']);
 });
 
+//Necessidades
+Route::group(['prefix'=>'necessidades', 'middleware'=>'auth'], function(){
+    Route::get('', ['as' => 'necessidades.index', 'uses' => 'NecessidadesController@index']);
+    Route::get('create', ['as' => 'necessidades.create', 'uses' => 'NecessidadesController@create']);
+    Route::post('store', ['as' => 'necessidades.store', 'uses' => 'NecessidadesController@store']);
+    Route::get('edit/{id}', ['as' => 'necessidades.edit', 'uses' => 'NecessidadesController@edit']);
+    Route::put('update/{id}', ['as' => 'necessidades.update', 'uses' => 'NecessidadesController@update']);
+    Route::get('destroy/{id}', ['as' => 'necessidades.destroy', 'uses' => 'NecessidadesController@destroy']);
+});

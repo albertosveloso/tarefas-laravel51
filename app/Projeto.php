@@ -26,4 +26,16 @@ class Projeto extends Model
         return $this->users->lists('id')->all();
     }
 
+    public function necessidades()
+    {
+        //Meu projeto tem várias necessidades
+        return $this->hasMany('App\Necessidade');
+    }
+
+    /*Pegar a lista de usuários associados a um projeto*/
+    public function getNecessidadesListAttribute()
+    {
+        return $this->necessidades->lists('id')->all();
+    }
+
 }

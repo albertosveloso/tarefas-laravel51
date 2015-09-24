@@ -28,7 +28,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Sair</a></li>
+                <li><a href="{{route('auth.logout')}}">Sair</a></li>
             </ul>
             <form class="navbar-form navbar-right">
                 <input type="text" class="form-control" placeholder="Pesquisar...">
@@ -41,11 +41,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="/">Home</a></li>
-                <li><a href="/tarefas">Tarefas</a></li>
-                <li><a href="/necessidades">Necessidades</a></li>
                 <li><a href="/projetos">Projetos</a></li>
+                <li><a href="/necessidades">Necessidades</a></li>
+                <li><a href="/tarefas">Tarefas</a></li>
                 <li><a href="/tipostarefas">Tipos de tarefas</a></li>
+                <hr>
+                <li><a href="/tipostarefas">Minha conta</a></li>
                 <!--<li><a href="/usuarios">Relatórios</a></li>-->
             </ul>
             <hr/>

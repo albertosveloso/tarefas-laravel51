@@ -27,8 +27,9 @@
 
                     {!! csrf_field() !!} <!--Segurança com token-->
 
-                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}">
-                    <input type="password" name="password" id="password" class="form-control">
+                    <input type="email" name="email" id="email" class="form-control" value="{{ old('email') }}"
+                           placeholder="exemplo@email.com">
+                    <input type="password" name="password" id="password" class="form-control" placeholder="senha">
                     <button type="submit" class="btn btn-lg btn-primary btn-block">Entrar</button>
                     <label class="checkbox pull-left">
                         <input type="checkbox" name="remember">Continuar conectado
