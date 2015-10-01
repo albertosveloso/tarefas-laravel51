@@ -22,19 +22,28 @@ class NecessidadesController extends Controller
 
     public function create()
     {
-        $projetoIds= Projeto::lists('descricao', 'id');
+        $projetoId= Projeto::lists('descricao', 'id');
 
-        return view('necessidades.create', compact('projetoIds'));
+        return view('necessidades.create', compact('projetoId'));
     }
-
-    //Grava os dados no banco
+    
+    
     public function store(NecessidadeRequest $request)
     {
-        $necessidadeNova =  $this->necessidade->create($request->all());
-
-        $necessidadeNova->projetos()->attach($request->input('projeto_list'));
-
+        //dd($request);
+        
+        $necessidade = $request->all();
+        
+        
+        $necessidade->setAttribute('projeto_id', $request->find('projeto_selec'));
+        
+        $necessidade->save();
+        
+        
+                 
         return redirect()->route('necessidades.index');
+     
+        
     }
-
+   
 }

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Projeto extends Model
 {
+
+    protected $table = 'projetos';
+
     protected $fillable = [
         'descricao',
         'apagado',
@@ -28,14 +31,8 @@ class Projeto extends Model
 
     public function necessidades()
     {
-        //Meu projeto tem várias necessidades
-        return $this->hasMany('App\Necessidade');
-    }
-
-    /*Pegar a lista de usuários associados a um projeto*/
-    public function getNecessidadesListAttribute()
-    {
-        return $this->necessidades->lists('id')->all();
+        //Projeto tem várias necessidades
+        return $this->hasMany('App\Necessidade', 'id', 'projeto_id');
     }
 
 }

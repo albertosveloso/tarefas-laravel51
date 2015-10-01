@@ -43,10 +43,11 @@
             <ul class="nav nav-sidebar">
                 <li><a href="/projetos">Projetos</a></li>
                 <li><a href="/necessidades">Necessidades</a></li>
-                <li><a href="/tarefas">Tarefas</a></li>
-                <li><a href="/tipostarefas">Tipos de tarefas</a></li>
+                <!--<li><a href="/tarefas">Tarefas</a></li>-->
+                <li><a href="/tipostarefa">Tipos de tarefas</a></li>
+                <li><a href="/statustarefa">Status de tarefas</a></li>
                 <hr>
-                <li><a href="/tipostarefas">Minha conta</a></li>
+                <!--<li><a href="/tipostarefas">Minha conta</a></li>-->
                 <!--<li><a href="/usuarios">Relatórios</a></li>-->
             </ul>
             <hr/>

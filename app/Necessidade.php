@@ -6,20 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Necessidade extends Model
 {
+    protected $table = 'necessidades';
+
     protected $fillable = [
-        'projeto_id',
         'descricao',
         'prioridade',
         'apagado',
-        'cancelado'
+        'cancelado',
+        'projeto_id'
     ];
 
-    public function projeto()
+    public function projetos()
     {
         //Consigo verificar a qual projeto a necessidade pertence
         //$necessidade = App\Necessidade::find(1);
         //$necessidade->projeto;
-        return $this->belongsTo('App\Projeto');
+        return $this->belongsTo('App\Projeto', 'projeto_id');
     }
 
  }

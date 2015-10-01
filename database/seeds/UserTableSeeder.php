@@ -14,6 +14,6 @@ class UserTableSeeder extends Seeder
     {
         \App\User::truncate();
 
-        factory(User::class, 10)->create(); // o codigo User::class e o mesmo que 'App\User', recurso do php 5
+        factory(User::class, 5)->create(); // o codigo User::class e o mesmo que 'App\User', recurso do php 5
     }
 }

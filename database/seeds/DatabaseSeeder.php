@@ -12,14 +12,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
         Model::unguard();
-        DB::statement('SET foreign_key_checks = 0;'); //desativando para acertando problemas de verificação chave estrangeira no mysql
-        $this->call('ProjetosTableSeeder'); //Chamando TableSedder que criamos para o cad. projeto
-        $this->call('UserTableSeeder'); //Chamando TableSedder para criar usuário aleatorios
-
+        
+        //Desativar verificação chave estrangeira no mysql
+        DB::statement('SET foreign_key_checks = 0;'); 
+        
+        //Popular usuários
+        $this->call('UserTableSeeder'); 
+        
+        //Popular projetos
+        $this->call('ProjetosTableSeeder'); 
+        
         //Criando apenas um usuário
-
         factory('App\User')->create(
             [
                 'name' => 'Beto',
@@ -28,9 +32,87 @@ class DatabaseSeeder extends Seeder
                 'remember_token' => str_random(10),
             ]
         );
+        
+        //Popular necessidades
+        $this->call('NecessidadesTableSeeder'); 
 
-
-        DB::statement('SET foreign_key_checks = 1;'); //ativando verificação chave estrangeira no mysql
+        
+        //Popular status personalizados
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Aguardando',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Em desenvolvimento',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Em testes',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Concluído',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        //Popular tipos de tarefas personalizados
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Tarefa',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+         
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Bug',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Estudo',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Melhoria',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Análise',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        //Ativar verificação chave estrangeira no mysql
+        DB::statement('SET foreign_key_checks = 1;'); 
         Model::reguard();
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNecessidadesTable extends Migration
+class CreateStatusTarefasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,18 +12,13 @@ class CreateNecessidadesTable extends Migration
      */
     public function up()
     {
-        Schema::create('necessidades', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('status_tarefas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descricao', 100);
-            $table->unsignedInteger('prioridade');
             $table->boolean('apagado');
             $table->boolean('cancelado');
-            $table->unsignedInteger('projeto_id');
-            $table->foreign('projeto_id')->references('id')->on('projetos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
-
     }
 
     /**
@@ -33,6 +28,6 @@ class CreateNecessidadesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('necessidades');
+        Schema::drop('status_tarefas');
     }
 }

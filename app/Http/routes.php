@@ -12,7 +12,7 @@
 */
 
 //Verificar sql que esta sendo enviado para o banco
-//Event::listen('illuminate.query', function($sql) { echo '<p style="position: relative">' . $sql . '<p/>' ;});
+//Event::listen('illuminate.query', function($sql) { var_dump($sql) ;});
 
 Route::get('/','TarefasController@index');
 
@@ -45,4 +45,24 @@ Route::group(['prefix'=>'necessidades', 'middleware'=>'auth'], function(){
     Route::get('edit/{id}', ['as' => 'necessidades.edit', 'uses' => 'NecessidadesController@edit']);
     Route::put('update/{id}', ['as' => 'necessidades.update', 'uses' => 'NecessidadesController@update']);
     Route::get('destroy/{id}', ['as' => 'necessidades.destroy', 'uses' => 'NecessidadesController@destroy']);
+});
+
+//Tipos Tarefa
+Route::group(['prefix'=>'tipostarefa', 'middleware'=>'auth'], function(){
+    Route::get('', ['as' => 'tipostarefa.index', 'uses' => 'TiposTarefaController@index']);
+    Route::get('create', ['as' => 'tipostarefa.create', 'uses' => 'TiposTarefaController@create']);
+    Route::post('store', ['as' => 'tipostarefa.store', 'uses' => 'TiposTarefaController@store']);
+    Route::get('edit/{id}', ['as' => 'tipostarefa.edit', 'uses' => 'TiposTarefaController@edit']);
+    Route::put('update/{id}', ['as' => 'tipostarefa.update', 'uses' => 'TiposTarefaController@update']);
+    Route::get('destroy/{id}', ['as' => 'tipostarefa.destroy', 'uses' => 'TiposTarefaController@destroy']);
+});
+
+//Status Tarefa
+Route::group(['prefix'=>'statustarefa', 'middleware'=>'auth'], function(){
+    Route::get('', ['as' => 'statustarefa.index', 'uses' => 'StatusTarefaController@index']);
+    Route::get('create', ['as' => 'statustarefa.create', 'uses' => 'StatusTarefaController@create']);
+    Route::post('store', ['as' => 'statustarefa.store', 'uses' => 'StatusTarefaController@store']);
+    Route::get('edit/{id}', ['as' => 'statustarefa.edit', 'uses' => 'StatusTarefaController@edit']);
+    Route::put('update/{id}', ['as' => 'statustarefa.update', 'uses' => 'StatusTarefaController@update']);
+    Route::get('destroy/{id}', ['as' => 'statustarefa.destroy', 'uses' => 'StatusTarefaController@destroy']);
 });
