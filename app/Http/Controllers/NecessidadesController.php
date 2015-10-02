@@ -16,7 +16,7 @@ class NecessidadesController extends Controller
 
     public function index()
     {
-        $necessidades = \App\Necessidade::with('projetos')->first()->paginate(4);
+        $necessidades = \App\Necessidade::with('projeto')->first()->paginate(4);
         return view('necessidades.index', compact('necessidades'));
     }
 

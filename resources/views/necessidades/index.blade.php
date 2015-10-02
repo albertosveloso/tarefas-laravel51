@@ -23,7 +23,7 @@
                     <p><b>Prioridade:</b>{{$necessidade->prioridade}}</p>
                     
                      @if($necessidade->projetos)
-                    <p><b>Projeto</b>: {{$necessidade->projetos->descricao}} - Código: {{$necessidade->projeto_id}} </p>
+                    <p><b>Projeto</b>: {{$necessidade->projeto->descricao}} - Código: {{$necessidade->projeto_id}} </p>
                     @endif
                     
                     

@@ -16,7 +16,7 @@ class Necessidade extends Model
         'projeto_id'
     ];
 
-    public function projetos()
+    public function projeto()
     {
         //Consigo verificar a qual projeto a necessidade pertence
         //$necessidade = App\Necessidade::find(1);

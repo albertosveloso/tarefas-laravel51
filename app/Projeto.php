@@ -29,7 +29,7 @@ class Projeto extends Model
         return $this->users->lists('id')->all();
     }
 
-    public function necessidades()
+    public function necessidade()
     {
         //Projeto tem várias necessidades
         return $this->hasMany('App\Necessidade', 'id', 'projeto_id');
