@@ -22,7 +22,7 @@
                 <div class="panel-body">
                     <p><b>Prioridade:</b>{{$necessidade->prioridade}}</p>
                     
-                     @if($necessidade->projetos)
+                     @if($necessidade->projeto)
                     <p><b>Projeto</b>: {{$necessidade->projeto->descricao}} - Código: {{$necessidade->projeto_id}} </p>
                     @endif
                     
