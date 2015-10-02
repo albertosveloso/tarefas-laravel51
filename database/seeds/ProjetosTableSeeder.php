@@ -16,7 +16,7 @@ class ProjetosTableSeeder extends Seeder
         Projeto::truncate(); //Apaga os dados da tabela do banco de dados
 
         //Chamando factory
-        factory('App\Projeto', 5)->create(); //Criando 15 novos registros faker
+        factory('App\Projeto', 5)->create(); //Criando 5 novos registros faker
 
         //Para rodar esta seeder e demais use no terminal
         //$ php artisan db:seed

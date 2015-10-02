@@ -20,9 +20,13 @@
                     </span>
             </div>
                 <div class="panel-body">
-                    <p><b>Prioridade:</b> {{$necessidade->prioridade}}</p>
-                    <p><b>Projeto</b>: {{$necessidade->projeto->descricao}} - Código: {{$necessidade->projeto->id}} </p>
-
+                    <p><b>Prioridade:</b>{{$necessidade->prioridade}}</p>
+                    
+                     @if($necessidade->projetos)
+                    <p><b>Projeto</b>: {{$necessidade->projetos->descricao}} - Código: {{$necessidade->projeto_id}} </p>
+                    @endif
+                    
+                    
                     <p>
                      <a href="{{route('necessidades.edit', ['id'=>$necessidade->id])}}"
                          class="btn btn-primary">Editar</a>

@@ -24,7 +24,7 @@ $factory->define(App\Necessidade::class, function (Faker\Generator $faker) {
         'prioridade' => $faker->numberBetween($min = 1, $max = 10),
         'apagado' => $faker->boolean(0),
         'cancelado' => $faker->boolean(0),
-        'projeto_id' => $faker->numberBetween($min = 1, $max = 10)
+        'projeto_id' => $faker->numberBetween($min = 1, $max = 5)
     ];
 });
 
