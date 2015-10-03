@@ -31,11 +31,12 @@ class NecessidadesController extends Controller
     {
         //@todo 02-10-2015 13:33
         $this->necessidade->create($request->all());
-
-        $this->necessidade->projetos()->add($request->input('projeto_selec'));
-
+        
+        $projeto = new Projeto;
+        $projeto->fill($request->input('projeto_selec'));
+        $this->necessidade->projetos()->save($projeto);
+        
         return redirect()->route('necessidades.index');
-     
         
     }
    
