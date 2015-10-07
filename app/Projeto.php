@@ -32,7 +32,7 @@ class Projeto extends Model
     public function necessidade()
     {
         //Projeto tem várias necessidades
-        return $this->hasMany('App\Necessidade', 'id', 'projeto_id');
+        return $this->hasMany('App\Necessidade');
     }
 
 }

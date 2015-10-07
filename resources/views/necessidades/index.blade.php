@@ -20,10 +20,12 @@
                     </span>
             </div>
                 <div class="panel-body">
-                    <p><b>Prioridade:</b>{{$necessidade->prioridade}}</p>
+                    <p><b>Prioridade: </b>{{$necessidade->prioridade}}</p>
                     
                      @if($necessidade->projeto)
-                    <p><b>Projeto</b>: {{$necessidade->projeto->descricao}} - Código: {{$necessidade->projeto_id}} </p>
+                     <p><b>Código do projeto: </b>{{$necessidade->projeto_id}}</p>
+                     <p><b>Projeto: </b>{{$necessidade->projeto->descricao}}</p>
+                    
                     @endif
                     
                     

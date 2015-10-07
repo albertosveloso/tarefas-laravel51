@@ -18,15 +18,17 @@ $factory->define(App\Projeto::class, function (Faker\Generator $faker) {
     ];
 });
 
+
 $factory->define(App\Necessidade::class, function (Faker\Generator $faker) {
     return [
         'descricao' => $faker->sentence(),
         'prioridade' => $faker->numberBetween($min = 1, $max = 10),
         'apagado' => $faker->boolean(0),
         'cancelado' => $faker->boolean(0),
-        'projeto_id' => $faker->numberBetween($min = 1, $max = 5)
+        'projeto_id' => $faker->numberBetween($min = 1, $max = 10)
     ];
 });
+ 
 
 $factory->define(App\StatusTarefa::class, function (Faker\Generator $faker) {
     return [
