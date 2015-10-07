@@ -31,7 +31,8 @@ class NecessidadeRequest extends Request
     public function messages()
     {
         return [
-            'descricao.required' => 'Informe a descrição da necessidade'
+            'descricao.required' => 'Informe a descrição da necessidade',
+            'descricao.min' => 'A descrição deve ter no mínimo 4 caracteres'
         ];
     }
 }
