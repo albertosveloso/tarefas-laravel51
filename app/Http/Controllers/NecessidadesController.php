@@ -16,9 +16,7 @@ class NecessidadesController extends Controller
 
     public function index()
     {
-        
-        $necessidades = \App\Necessidade::paginate(4);
-        
+        $necessidades = $this->necessidade->orderby('prioridade', 'desc')->paginate(4);
         return view('necessidades.index', compact('necessidades'));
     }
 
@@ -28,20 +26,16 @@ class NecessidadesController extends Controller
         return view('necessidades.create', compact('projetoId'));
     }
     
-    
     public function store(NecessidadeRequest $request)
     {
         $this->necessidade->create($request->all());
         return redirect()->route('necessidades.index');
     }
     
-    //Editar projeto
     public function edit($id)
     {
         $projetoId = Projeto::lists('descricao', 'id');
-
         $necessidade = $this->necessidade->find($id);
-
         return view('necessidades.edit', compact('necessidade', 'projetoId'));
     }
 
@@ -50,13 +44,10 @@ class NecessidadesController extends Controller
         $this->necessidade->find($id)->update($request->all());
         return redirect()->route('necessidades.index');
     }
-    
-    
-      //Excluir necessidade
+
     public function destroy($id)
     {
         $this->necessidade->find($id)->delete();
         return redirect()->route('necessidades.index');
     }
-
 }
