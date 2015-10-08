@@ -20,5 +20,24 @@ class Tarefa extends Model
         'user_id'
     ];
     
+    public function necessidade()
+    {
+        return $this->belongsTo('App\Necessidade');
+    }
+    
+    public function statustarefa()
+    {
+        return $this->belongsTo('App\StatusTarefa');
+    }
+    
+    public function tipostarefa()
+    {
+        return $this->belongsTo('App\TiposTarefa');
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
     
 }

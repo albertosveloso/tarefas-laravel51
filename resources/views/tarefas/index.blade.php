@@ -21,19 +21,16 @@
             </div>
                 <div class="panel-body">
                     <p><b>Tempo estimado: </b>{{$tarefa->tempoestimado}}</p>
-                    
-                     @if($tarefa->user)
-                     <p><b>Código do usuário: </b>{{$tarefa->user_id}}</p>
-                     <p><b>Nome: </b>{{$tarefa->user->name}}</p>
-                    @endif
-                    
-                    
+                    <p><b>Tempo gasto: </b>{{$tarefa->tempogasto}}</p>
+                     <p><b>Responsável: </b>{{$tarefa->user->name}}</p>
+                     <p><b>Status da tarefa: </b>{{$tarefa->statustarefa->descricao}}</p>
+                     <p><b>Tipo de tarefa: </b>{{$tarefa->tipostarefa->descricao}}</p>
+                     <p><b>Necessidade: </b>{{$tarefa->necessidade->descricao}}</p>
                     <p>
                      <a href="{{route('necessidades.edit', ['id'=>$tarefa->id])}}"
                          class="btn btn-primary">Editar</a>
                       <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
                       </p>
-
             </div>
             @endif
         @endforeach
