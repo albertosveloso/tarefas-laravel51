@@ -14,7 +14,7 @@
 //Verificar sql que esta sendo enviado para o banco
 //Event::listen('illuminate.query', function($sql) { var_dump($sql) ;});
 
-Route::get('/','ProjetosController@index');
+Route::get('/','TarefasController@index');
 
 //Autenticação login laravel um a um ou podemos usar de maneira simplificada conforme acima:
 //Route::controllers([
@@ -65,4 +65,14 @@ Route::group(['prefix'=>'statustarefa', 'middleware'=>'auth'], function(){
     Route::get('edit/{id}', ['as' => 'statustarefa.edit', 'uses' => 'StatusTarefaController@edit']);
     Route::put('update/{id}', ['as' => 'statustarefa.update', 'uses' => 'StatusTarefaController@update']);
     Route::get('destroy/{id}', ['as' => 'statustarefa.destroy', 'uses' => 'StatusTarefaController@destroy']);
+});
+
+//Tarefas
+Route::group(['prefix'=>'tarefas', 'middleware'=>'auth'], function(){
+    Route::get('', ['as' => 'tarefas.index', 'uses' => 'TarefasController@index']);
+    Route::get('create', ['as' => 'tarefas.create', 'uses' => 'TarefasController@create']);
+    Route::post('store', ['as' => 'tarefas.store', 'uses' => 'TarefasController@store']);
+    Route::get('edit/{id}', ['as' => 'tarefas.edit', 'uses' => 'TarefasController@edit']);
+    Route::put('update/{id}', ['as' => 'tarefas.update', 'uses' => 'TarefasController@update']);
+    Route::get('destroy/{id}', ['as' => 'tarefas.destroy', 'uses' => 'TarefasController@destroy']);
 });

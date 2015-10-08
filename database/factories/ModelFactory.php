@@ -53,3 +53,18 @@ $factory->define(App\StatusTarefa::class, function (Faker\Generator $faker) {
         'cancelado' => $faker->boolean(0)
     ];
 });
+
+$factory->define(App\Tarefa::class, function (Faker\Generator $faker) {
+    return [
+        'descricao' => $faker->sentence(),
+        'apagado' => $faker->boolean(0),
+        'cancelado' => $faker->boolean(0),
+        'tempoestimado' => $faker->numberBetween($min = 1, $max = 10),
+        'tempogasto'=> $faker->numberBetween($min = 1, $max = 10),
+        'necessidade_id' => $faker->numberBetween($min = 1, $max = 10),
+        'statustarefa_id' => $faker->numberBetween($min = 1, $max = 4),
+        'tipostarefa_id' => $faker->numberBetween($min = 1, $max = 5),
+        'user_id' => $faker->numberBetween($min = 1, $max = 5)
+    ];
+});
+

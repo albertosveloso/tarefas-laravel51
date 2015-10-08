@@ -111,6 +111,9 @@ class DatabaseSeeder extends Seeder
             ]
         );
         
+        //Popular tarefas
+        $this->call('TarefaTableSeeder'); 
+        
         //Ativar verificação chave estrangeira no mysql
         DB::statement('SET foreign_key_checks = 1;'); 
         Model::reguard();
