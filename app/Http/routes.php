@@ -14,7 +14,7 @@
 //Verificar sql que esta sendo enviado para o banco
 //Event::listen('illuminate.query', function($sql) { var_dump($sql) ;});
 
-Route::get('/','TarefasController@index');
+Route::get('/','Auth\AuthController@getLogin');
 
 //Autenticação login laravel um a um ou podemos usar de maneira simplificada conforme acima:
 //Route::controllers([

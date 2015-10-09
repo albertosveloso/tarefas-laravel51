@@ -24,7 +24,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Rascunho de tarefas</a>
+            <a class="navbar-brand" href="/tarefas" title="Voltar para tarefas">Rascunho de tarefas</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
             <ul class="nav navbar-nav navbar-right">
@@ -41,9 +41,9 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="/tarefas">Tarefas</a></li>
                 <li><a href="/projetos">Projetos</a></li>
                 <li><a href="/necessidades">Necessidades</a></li>
+                <li><a href="/tarefas">Tarefas</a></li>
                 <li><a href="/tipostarefa">Tipos de tarefas</a></li>
                 <li><a href="/statustarefa">Status de tarefas</a></li>
                 <hr>

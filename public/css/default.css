@@ -131,15 +131,8 @@ body {
 }
 
 #tempogasto, #tempoestimado{
-	min-width: 50px;
-}
-
-label[for=tempogasto]{
-	margin-left: 30px;
-}
-
-#tempogasto{
-	margin-left: 30px;
+    width: 170px;
+    min-width: 50px;
 }
 
 .btn-excluir, .btn-exportarpdf{

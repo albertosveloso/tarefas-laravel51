@@ -19,17 +19,18 @@
                     @endif
                     </span>
             </div>
-                <div class="panel-body">
-                    <p><b>Tempo estimado: </b>{{$tarefa->tempoestimado}}</p>
-                    <p><b>Tempo gasto: </b>{{$tarefa->tempogasto}}</p>
-                     <p><b>Responsável: </b>{{$tarefa->user->name}}</p>
+            <div class="panel-body">
                      <p><b>Status da tarefa: </b>{{$tarefa->statustarefa->descricao}}</p>
+                     <p><b>Responsável: </b>{{$tarefa->user->name}}</p>
                      <p><b>Tipo de tarefa: </b>{{$tarefa->tipostarefa->descricao}}</p>
                      <p><b>Necessidade: </b>{{$tarefa->necessidade->descricao}}</p>
+                     <p><b>Tempo estimado: </b>{{$tarefa->tempoestimado}}</p>
+                    <p><b>Tempo gasto: </b>{{$tarefa->tempogasto}}</p>
+                     
                     <p>
-                     <a href="{{route('necessidades.edit', ['id'=>$tarefa->id])}}"
-                         class="btn btn-primary">Editar</a>
-                      <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
+                     <a href="{{route('tarefas.edit', ['id'=>$tarefa->id])}}"
+                         class="btn btn-primary btn-xs">Editar</a>
+                      <a class="btn btn-default btn-xs" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
                       </p>
             </div>
             @endif
