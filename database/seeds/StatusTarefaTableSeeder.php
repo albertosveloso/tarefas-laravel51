@@ -13,7 +13,40 @@ class StatusTarefaTableSeeder extends Seeder
     public function run()
     {
         \App\StatusTarefa::truncate();
-
-        factory(StatusTarefa::class, 3)->create(); 
+        
+        //Popular status personalizados
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Aguardando',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Em desenvolvimento',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Em testes',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\StatusTarefa')->create(
+            [
+                'descricao' => 'Concluído',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        //factory(StatusTarefa::class, 3)->create(); 
     }
 }

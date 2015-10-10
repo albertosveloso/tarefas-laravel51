@@ -13,7 +13,48 @@ class TiposTarefaTableSeeder extends Seeder
     public function run()
     {
         \App\TiposTarefa::truncate();
+        
+         //Popular tipos de tarefas personalizados
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Tarefa',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+         
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Bug',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Estudo',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Melhoria',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
+        
+        factory('App\TiposTarefa')->create(
+            [
+                'descricao' => 'Análise',
+                'apagado' => 0,
+                'cancelado'=> 0
+            ]
+        );
 
-        factory(TiposTarefa::class, 3)->create(); 
+        //factory(TiposTarefa::class, 3)->create(); 
     }
 }

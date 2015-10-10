@@ -23,93 +23,14 @@ class DatabaseSeeder extends Seeder
         //Popular projetos
         $this->call('ProjetosTableSeeder'); 
         
-        //Criando apenas um usuário
-        factory('App\User')->create(
-            [
-                'name' => 'Beto',
-                'email' => 'albertosveloso@gmail.com',
-                'password' => bcrypt(123456),
-                'remember_token' => str_random(10),
-            ]
-        );
-        
         //Popular necessidades
         $this->call('NecessidadesTableSeeder'); 
 
-        
-        //Popular status personalizados
-        factory('App\StatusTarefa')->create(
-            [
-                'descricao' => 'Aguardando',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\StatusTarefa')->create(
-            [
-                'descricao' => 'Em desenvolvimento',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\StatusTarefa')->create(
-            [
-                'descricao' => 'Em testes',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\StatusTarefa')->create(
-            [
-                'descricao' => 'Concluído',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
+        //Popular status de tarefas
+        $this->call('StatusTarefaTableSeeder');
         
         //Popular tipos de tarefas personalizados
-        factory('App\TiposTarefa')->create(
-            [
-                'descricao' => 'Tarefa',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-         
-        factory('App\TiposTarefa')->create(
-            [
-                'descricao' => 'Bug',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\TiposTarefa')->create(
-            [
-                'descricao' => 'Estudo',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\TiposTarefa')->create(
-            [
-                'descricao' => 'Melhoria',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
-        
-        factory('App\TiposTarefa')->create(
-            [
-                'descricao' => 'Análise',
-                'apagado' => 0,
-                'cancelado'=> 0
-            ]
-        );
+        $this->call('TiposTarefaTableSeeder');
         
         //Popular tarefas
         $this->call('TarefaTableSeeder'); 
