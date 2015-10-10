@@ -76,3 +76,12 @@ Route::group(['prefix'=>'tarefas', 'middleware'=>'auth'], function(){
     Route::put('update/{id}', ['as' => 'tarefas.update', 'uses' => 'TarefasController@update']);
     Route::get('destroy/{id}', ['as' => 'tarefas.destroy', 'uses' => 'TarefasController@destroy']);
 });
+
+//Usuários
+Route::group(['prefix'=>'users', 'middleware'=>'auth'], function(){
+    Route::get('create', ['as' => 'users.create', 'uses' => 'Auth\AuthController@create']);
+    Route::post('store', ['as' => 'users.store', 'uses' => 'Auth\AuthController@store']);
+    Route::get('edit/{id}', ['as' => 'users.edit', 'uses' => 'Auth\AuthController@edit']);
+    Route::put('update/{id}', ['as' => 'users.update', 'uses' => 'Auth\AuthController@update']);
+    Route::get('destroy/{id}', ['as' => 'users.destroy', 'uses' => 'Auth\AuthController@destroy']);
+});
