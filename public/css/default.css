@@ -165,7 +165,8 @@ body {
 }
 
 .alert {
-  color: #C40D0D;
+    margin-top: 10px;
+    list-style: none !important;
 }
 
 .datas {

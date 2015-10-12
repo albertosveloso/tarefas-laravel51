@@ -5,7 +5,7 @@
     <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Editar projeto:</h3>
 
     @if($errors->any())
-        <ul class="alert">
+        <ul class="alert alert-danger">
             @foreach($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach

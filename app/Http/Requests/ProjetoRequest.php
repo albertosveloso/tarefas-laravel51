@@ -33,9 +33,9 @@ class ProjetoRequest extends Request
     public function messages()
     {
         return [
-            'descricao.required' => 'Informe a descrição do projeto.',
+            'descricao.required' => 'Informe a descrição do projeto',
             'descricao.min' => 'A descrição deve ter no mínimo 8 caracteres',
-            'user_list.required' => 'Selecione no mínimo um usuário.',
+            'user_list.required' => 'Selecione no mínimo um responsável',
 
         ];
     }

@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Status das tarefa
-        <a href="{{route('statustarefa.create')}}" class="btn btn-primary novo">Criar Status de farefa</a>
+    <h3 class="page-header" xmlns="http://www.w3.org/1999/html">Status de tarefas
+        <a href="{{route('statustarefa.create')}}" class="btn btn-primary novo">Criar status de tarefa</a>
     </h3>
 
     <div class="panel panel panel-primary">
