@@ -18,6 +18,7 @@ class CreateTiposTarefasTable extends Migration
             $table->boolean('apagado');
             $table->boolean('cancelado');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

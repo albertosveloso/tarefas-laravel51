@@ -8,7 +8,6 @@
 
     <div class="panel panel panel-primary">
         @foreach($tarefas as $tarefa)
-            @if(!$tarefa->apagado)
                 <div class="panel-heading">
                 <span class="descricao" title="Criado em: {{$tarefa->created_at->format('d/m/Y h:i')}}">{{$tarefa->descricao}} - ID: {{ $tarefa->id }}</span>
                     <span class="status">Status:
@@ -33,7 +32,6 @@
                       <a class="btn btn-default btn-xs" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
                       </p>
             </div>
-            @endif
         @endforeach
         {!! $tarefas->render() !!} <!--paginacao do laravel, necessario usar ! ao inves de aspas para nao escapar html-->
     </div>

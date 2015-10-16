@@ -22,6 +22,7 @@ class CreateNecessidadesTable extends Migration
             $table->unsignedInteger('projeto_id');
             $table->foreign('projeto_id')->references('id')->on('projetos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
 
     }

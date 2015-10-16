@@ -3,11 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Projeto extends Model
 {
 
     protected $table = 'projetos';
+    
+    use SoftDeletes; 
 
     protected $fillable = [
         'descricao',

@@ -25,12 +25,13 @@ class CreateTarefasTable extends Migration
             $table->integer('user_id')->unsigned();
             
             //Foreign Keys
-            $table->foreign('necessidade_id')->references('id')->on('necessidades')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('statustarefa_id')->references('id')->on('status_tarefas')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('tipostarefa_id')->references('id')->on('tipos_tarefas')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('necessidade_id')->references('id')->on('necessidades')->onUpdate('cascade');
+            $table->foreign('statustarefa_id')->references('id')->on('status_tarefas')->onUpdate('cascade');
+            $table->foreign('tipostarefa_id')->references('id')->on('tipos_tarefas')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
             
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

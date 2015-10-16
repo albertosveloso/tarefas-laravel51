@@ -19,6 +19,7 @@ class CreateUsersProjetosTable extends Migration
             $table->foreign('projeto_id')->references('id')->on('projetos')->onDelete('cascade');
             //A função onDelete auxilia quando excluimos um usuario as referencias manytomany dele
             //também são excluidas na tabela users_projetos
+             $table->softDeletes();
         });
     }
 
