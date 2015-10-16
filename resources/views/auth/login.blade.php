@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="#">
-    <title>RT - Rascunho de tarefas </title>
+    <title>Login - Rascunho de tarefas </title>
     <link href="{{ asset('img/terminal.png') }}" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/bootstrap.min.css')}}" rel="stylesheet">
@@ -45,7 +45,7 @@
                 </ul>
 
             @endif
-            <!--<a href="#" class="text-center new-account">Criar conta </a>-->
+            <a href="/auth/register" class="text-center new-account">Criar conta </a>
         </div>
     </div>
 </div>
