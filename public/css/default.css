@@ -145,6 +145,7 @@ body {
 
 .status, .excluir, .novo{
   float: right !important;
+  margin-left: 10px;
 }
 
 .dataalteracao { float:right;}
@@ -175,4 +176,24 @@ body {
 
 .usuarios{
   min-height: 250px;
+}
+
+.navbar-right li a
+{
+  color: #fff !important;
+}
+
+.navbar-right li a:hover
+{
+  text-decoration: underline;
+}
+
+.acoes
+{
+    float:right;
+}
+
+.glyphicon
+{
+    color: #fff !important;
 }

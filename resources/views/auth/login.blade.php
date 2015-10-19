@@ -45,7 +45,7 @@
                 </ul>
 
             @endif
-            <a href="/auth/register" class="text-center new-account">Criar conta </a>
+            <a href="/auth/register" class="text-center new-account">Criar conta Rascunho de tarefas </a>
         </div>
     </div>
 </div>

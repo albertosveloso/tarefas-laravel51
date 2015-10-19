@@ -19,7 +19,7 @@ class TiposTarefaController extends Controller
     
     public function index()
     {
-        $tipostarefas = $this->tiposTarefa->orderby('id', 'desc')->paginate(4);
+        $tipostarefas = $this->tiposTarefa->orderby('id', 'desc')->paginate(8);
         return view('tipostarefa.index', compact('tipostarefas'));
     }
 

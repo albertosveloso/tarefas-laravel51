@@ -8,27 +8,25 @@
 
 <div class="panel panel panel-primary">
     @foreach($tipostarefas as $tipotarefa)
-    <div class="panel-heading">
-        <span class="descricao" title="Criado em: {{$tipotarefa->created_at->format('d/m/Y h:i')}}">{{$tipotarefa->descricao}} - ID: {{ $tipotarefa->id }}</span>
-        <span class="status">Status:
+    <div class="panel-heading" title="Criado em: {{$tipotarefa->created_at->format('d/m/Y h:i')}}">
+        <span class="descricao">{{$tipotarefa->descricao}} - 
             @if($tipotarefa->cancelado)
             <b>Cancelado</b>
             @else
             <span>Ativo</span>
             @endif
         </span>
+        <span class="glyphicon glyphicon-search"></span>
+    <div class="acoes">
+    <a href="{{route('tipostarefa.edit', ['id'=>$tipotarefa->id])}}" title="Editar"><span class="glyphicon glyphicon-cog"></span></a>
+    <a class="excluir" onclick="return confirm('Deseja realmente remover o tipo de tarefa: {{$tipotarefa->descricao}} ?')" href="{{route('tipostarefa.destroy', ['id'=>$tipotarefa->id])}}" title="Excluir"><span class="glyphicon glyphicon-remove"></span></a>
     </div>
-    <div class="panel-body">
-        <p>
-            <a href="{{route('tipostarefa.edit', ['id'=>$tipotarefa->id])}}"
-               class="btn btn-primary">Editar</a>
-            <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover o tipo de tarefa: {{$tipotarefa->descricao}} ?')" href="{{route('tipostarefa.destroy', ['id'=>$tipotarefa->id])}}">Excluir</a>
-        </p>
-
     </div>
+    <br>
     @endforeach
     {!! $tipostarefas->render() !!} <!--paginacao do laravel, necessario usar ! ao inves de aspas para nao escapar html-->
 </div>
+
 
 @stop
 

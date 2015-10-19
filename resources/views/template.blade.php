@@ -49,6 +49,7 @@
                 <li><a href="/tipostarefa">Tipos de tarefas</a></li>
                 <li><a href="/statustarefa">Status de tarefas</a></li>
                 <hr>
+                <!--<li>    {{$user = Auth::user()->name}}</li>-->
             </ul>
             <hr/>
 
