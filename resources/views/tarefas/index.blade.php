@@ -23,13 +23,13 @@
                      <p><b>Responsável: </b>{{$tarefa->user->name}}</p>
                      <p><b>Tipo de tarefa: </b>{{$tarefa->tipostarefa->descricao}}</p>
                      <p><b>Necessidade: </b>{{$tarefa->necessidade->descricao}}</p>
-                     <p><b>Tempo estimado: </b>{{$tarefa->tempoestimado}}</p>
-                    <p><b>Tempo gasto: </b>{{$tarefa->tempogasto}}</p>
+                     <p><b>Tempo estimado: </b>{{$tarefa->tempoestimado}} hora(s)</p>
+                    <p><b>Tempo gasto:  </b>{{$tarefa->tempogasto}} hora(s)</p>
                      
                     <p>
                      <a href="{{route('tarefas.edit', ['id'=>$tarefa->id])}}"
-                         class="btn btn-primary btn-xs">Editar</a>
-                      <a class="btn btn-default btn-xs" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
+                         class="btn btn-primary">Editar</a>
+                      <a class="btn btn-default excluir" onclick="return confirm('Deseja realmente remover a necessidade: {{$tarefa->descricao}} ?')" href="{{route('tarefas.destroy', ['id'=>$tarefa->id])}}">Excluir</a>
                       </p>
             </div>
         @endforeach
