@@ -29,11 +29,13 @@
             .content {
                 text-align: center;
                 display: inline-block;
+                margin-top: 20px;
             }
 
             .title {
-                font-size: 72px;
-                margin-bottom: 40px;
+                font-weight: bold;
+                font-size: 40px;
+                margin-top: 20px;
             }
         </style>
     </head>
@@ -41,6 +43,7 @@
         <div class="container">
             <div class="content">
                 <div class="title">404 - Página não encontrada</div>
+                <img src="{{ asset('img/tv-velha.jpg') }}">
             </div>
         </div>
     </body>
