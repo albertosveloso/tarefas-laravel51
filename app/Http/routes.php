@@ -31,6 +31,12 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
+//Teste impressao relatorio snappy
+Route::get('/pdf', function(){
+	$pdf = PDF::loadView('auth/login');
+	return $pdf->stream();
+	//return $pdf->download('login.pdf');
+});
 
 
 //Projetos: usando agrupamento de rotas para não ficar repetindo o prefixo projeto, e já adicionando o middleware

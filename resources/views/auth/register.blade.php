@@ -27,7 +27,7 @@
                             {!! csrf_field() !!}
                                 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nome">
                                 <input type="email" class="form-control" name="email" id="email" value="{{ old('email') }}" placeholder="seuemail@email.com">
-                                <input type="password" class="form-control" name="password" placeholder="senha">
+                                <input type="password" class="form-control" name="password" placeholder="password">
                                 <input type="password" class="form-control" name="password_confirmation" placeholder="confirme a senha">
                                 <button type="submit" class="btn btn-lg btn-primary btn-block">Criar conta</button>
                         </form>

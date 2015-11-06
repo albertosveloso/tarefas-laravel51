@@ -14,7 +14,7 @@ class TarefasController extends Controller
         
     public function index(){
         
-        $tarefas = $this->tarefa->orderby('id', 'desc')->paginate(4);
+        $tarefas = $this->tarefa->orderby('id', 'desc')->paginate(9);
         //$tarefas = \App\Tarefa::paginate(4);
         return view('tarefas.index', compact('tarefas'));
     }

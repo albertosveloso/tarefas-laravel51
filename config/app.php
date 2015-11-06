@@ -145,7 +145,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        \Illuminate\Html\HtmlServiceProvider::class
+        \Illuminate\Html\HtmlServiceProvider::class,
+        
+        /*
+         *  Snappy PDF
+         */
+        Barryvdh\Snappy\ServiceProvider::class,
 
     ],
 
@@ -196,7 +201,10 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => \Illuminate\Html\FormFacade::class,
-        'Html'      => \Illuminate\Html\HtmlFacade::class
+        'Html'      => \Illuminate\Html\HtmlFacade::class,
+        
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'Image' => Barryvdh\Snappy\Facades\SnappyImage::class
 
     ],
 
