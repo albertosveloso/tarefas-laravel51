@@ -49,20 +49,12 @@
                 <li><a href="/tipostarefa">Tipos de tarefas</a></li>
                 <li><a href="/statustarefa">Status de tarefas</a></li>
                 <hr>
-                <!--<li>    {{$user = Auth::user()->name}}</li>-->
+                <li class="relatorio" style="margin-left: 20px;">Relatórios:</li>
+                <li><a href="/pdf" target="_blank">Tarefas por responsável</a></li>
+                <li><a href="/pdf"target="_blank">Tarefas por projeto</a></li>
+                <li><a href="/pdf" target="_blank">Tarefas por status</a></li>
             </ul>
             <hr/>
-
-            <!--            <h3>Projetos</h3>-->
-            <!--            <fieldset>-->
-            <!--                <ul class="nav nav-sidebar">-->
-            <!--                    <li><a href="">Todos</a></li>-->
-            <!--                    <li><a href="">Família</a></li>-->
-            <!--                    <li><a href="">Trabalho</a></li>-->
-            <!--                    <li><a href="">Estudo</a></li>-->
-            <!--                    <li><a href="">Carro</a></li>-->
-            <!--                    <li><a href="">Casa</a></li>-->
-            <!--                </ul>-->
         </div>
         </fieldset>
     </div>

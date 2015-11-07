@@ -81,6 +81,12 @@ body {
   background-color: #428bca;
 }
 
+.relatorio
+{
+    margin-left: 20px;
+    font-weight: bold;
+}
+
 
 /*
  * Main content
