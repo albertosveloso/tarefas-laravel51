@@ -16,12 +16,6 @@
 
 Route::get('/','Auth\AuthController@getLogin');
 
-//Autenticação login laravel um a um ou podemos usar de maneira simplificada conforme acima:
-//Route::controllers([
-//    'auth' => 'Auth\AuthController',
-//    'password' => 'Auth\PasswordController'
-//]);
-
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -30,14 +24,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-
-//Teste impressao relatorio snappy
-Route::get('/pdf', function(){
-	$pdf = PDF::loadView('auth/login');
-	return $pdf->stream();
-	//return $pdf->download('login.pdf');
-});
-
 
 //Projetos: usando agrupamento de rotas para não ficar repetindo o prefixo projeto, e já adicionando o middleware
 Route::group(['prefix'=>'projetos', 'middleware'=>'auth'], function(){
@@ -97,3 +83,6 @@ Route::group(['prefix'=>'users', 'middleware'=>'auth'], function(){
     Route::put('update/{id}', ['as' => 'users.update', 'uses' => 'Auth\AuthController@update']);
     Route::get('destroy/{id}', ['as' => 'users.destroy', 'uses' => 'Auth\AuthController@destroy']);
 });
+
+//Relatórios
+Route::get('pdf', 'RelatoriosController@invoice');

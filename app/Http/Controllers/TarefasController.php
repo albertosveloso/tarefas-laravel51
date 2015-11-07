@@ -55,7 +55,5 @@ class TarefasController extends Controller
         $this->tarefa->find($id)->delete();
         return redirect()->route('tarefas.index');
     }
-
-
     
 }

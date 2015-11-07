@@ -7,14 +7,14 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "illuminate/html": "^5.0"
+        "illuminate/html": "^5.0",
+        "barryvdh/laravel-dompdf": "0.6.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
-        "barryvdh/laravel-snappy": "0.2.x"
+        "phpspec/phpspec": "~2.1"
     },
     "autoload": {
         "classmap": [

@@ -147,10 +147,8 @@ return [
 
         \Illuminate\Html\HtmlServiceProvider::class,
         
-        /*
-         *  Snappy PDF
-         */
-        Barryvdh\Snappy\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class
+  
 
     ],
 
@@ -203,8 +201,7 @@ return [
         'Form'      => \Illuminate\Html\FormFacade::class,
         'Html'      => \Illuminate\Html\HtmlFacade::class,
         
-        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
-        'Image' => Barryvdh\Snappy\Facades\SnappyImage::class
+        'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 
