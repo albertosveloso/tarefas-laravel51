@@ -16,6 +16,10 @@
 
 Route::get('/','Auth\AuthController@getLogin');
 
+
+
+
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -85,5 +89,10 @@ Route::group(['prefix'=>'users', 'middleware'=>'auth'], function(){
     Route::get('edit/{id}', ['as' => 'users.edit', 'uses' => 'Auth\AuthController@edit']);
     Route::put('update/{id}', ['as' => 'users.update', 'uses' => 'Auth\AuthController@update']);
     Route::get('destroy/{id}', ['as' => 'users.destroy', 'uses' => 'Auth\AuthController@destroy']);
+});
+
+//Home
+Route::group(['prefix'=>'home', 'middleware'=>'auth'], function(){
+    Route::get('', ['as' => 'tarefas.index', 'uses' => 'TarefasController@index']);
 });
 
