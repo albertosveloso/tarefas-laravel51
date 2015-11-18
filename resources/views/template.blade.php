@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@yield('title')</title>
+    <title>Rascunho de tarefas</title>
     <link href="{{ asset('img/terminal.png') }}" rel="shortcut icon">
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -50,9 +50,9 @@
                 <li><a href="/statustarefa">Status de tarefas</a></li>
                 <hr>
                 <li class="relatorio" style="margin-left: 20px;">Relatórios:</li>
-                <li><a href="/pdf" target="_blank">Tarefas por responsável</a></li>
-                <li><a href="/pdf"target="_blank">Tarefas por projeto</a></li>
-                <li><a href="/pdf" target="_blank">Tarefas por status</a></li>
+                <li><a href="tarefas/relatorioresponsavel" target="_blank">Tarefas por responsável</a></li>
+                <li><a href="tarefas/relatoriotarproj" target="_blank">Tarefas por projeto</a></li>
+                <li><a href="tarefas/relatoriostatus" target="_blank">Tarefas por status</a></li>
             </ul>
             <hr/>
         </div>

@@ -73,6 +73,9 @@ Route::group(['prefix'=>'tarefas', 'middleware'=>'auth'], function(){
     Route::get('edit/{id}', ['as' => 'tarefas.edit', 'uses' => 'TarefasController@edit']);
     Route::put('update/{id}', ['as' => 'tarefas.update', 'uses' => 'TarefasController@update']);
     Route::get('destroy/{id}', ['as' => 'tarefas.destroy', 'uses' => 'TarefasController@destroy']);
+    Route::get('relatorioresponsavel', ['as' => 'tarefas.relatorioresponsavel', 'uses' => 'TarefasController@relatorioresponsavel']);
+    Route::get('relatoriotarproj', ['as' => 'tarefas.relatoriortarproj', 'uses' => 'TarefasController@relatoriotarproj']);
+    Route::get('relatoriostatus', ['as' => 'tarefas.relatoriostatus', 'uses' => 'TarefasController@relatoriostatus']);
 });
 
 //Usuários
@@ -84,5 +87,3 @@ Route::group(['prefix'=>'users', 'middleware'=>'auth'], function(){
     Route::get('destroy/{id}', ['as' => 'users.destroy', 'uses' => 'Auth\AuthController@destroy']);
 });
 
-//Relatórios
-Route::get('pdf', 'RelatoriosController@invoice');
